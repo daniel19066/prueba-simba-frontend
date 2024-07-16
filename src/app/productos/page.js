@@ -1,11 +1,10 @@
-import Image from "next/image";
-import Navbar from './components/navbar';
-import Tabla from './components/TablaCont';
-import {Input} from "@nextui-org/input";
-import { Label } from "@headlessui/react";
+
+import Navbar from '@/app/components/navbar';
+import Tabla from '@/app/components/TablaCont';
+
 
 async function getData() {
-  const res = await fetch('http://127.0.0.1:8000/empresas/')
+  const res = await fetch('http://127.0.0.1:8000/productos/')
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
@@ -29,7 +28,7 @@ export default async function Home() {
 
   for(var i = 0; i<data.length; i++){
     var row =data[i];
-    row.key = data[i].empresa;
+    row.key = data[i].id_producto;
     rows.push(row);
 
   }
